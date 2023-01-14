@@ -1,0 +1,40 @@
+/* CSS Reset */
+@import url(https://cdn.skypack.dev/sanitize.css);
+
+:root{
+    /* Backgrounds, Headers, Buttons */
+    --color-primary: #1E2E5C;
+    /* Text, Tables, Charts */
+    --color-secondary: #D8D8D8;
+    /* Buttons, Graphs, Icons */
+    --color-highlight: #70A800;
+    /* Text */
+    --color-black: #000000;
+    /* Background, Text */
+    --color-white: #FFFFFF;
+}
+
+body{
+    color: var(--color-black);
+}
+
+nav{
+    background-color: var(--color-primary);
+}
+
+nav * a:hover{
+    color: var(--color-highlight) !important;
+}
+
+header{
+    margin: 1em 0;
+}
+
+.card .card-header{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.highlight{
+    color: var(--color-highlight);
+}
