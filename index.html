@@ -44,40 +44,158 @@
                         <h3>Budget Details</h3>
                     </div>
                     <form action="#">
-                        <div class="row justify-content-center m-3">
-                            <div class="col-md col-md-5">
-                                <label class="form-label" for="income">Monthly Income</label>
-                                <input class="form-control"
-                                       type="number"
-                                       id="income"
-                                       name="income"
-                                       placeholder="Total Income"
-                                       min="0"
-                                       step="0.01">
+                        <ul class="nav nav-tabs" id="budgetTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active"
+                                        id="incomeTab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#incomePane"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="incomePane"
+                                        aria-selected="true">Income
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link disabled"
+                                        id="expensesTab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#expensesPane"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="expensesPane"
+                                        aria-selected="true">Expenses
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link disabled"
+                                        id="debtTab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#deptPane"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="deptPane"
+                                        aria-selected="true">Debt
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link"
+                                        id="percentTab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#percentPane"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="percentPane"
+                                        aria-selected="true">Percentages
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link disabled"
+                                        id="budgetTab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#budgetPane"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="budgetPane"
+                                        aria-selected="true">Budget
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active"
+                                 id="incomePane"
+                                 role="tabpanel"
+                                 aria-labelledby="tabPane">
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <label class="form-label" for="income">Monthly
+                                                                               Income</label>
+                                        <input class="form-control"
+                                               type="number"
+                                               id="income"
+                                               name="income"
+                                               placeholder="Total Income"
+                                               min="0"
+                                               step="0.01">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center m-3">
-                            <div class="col-md col-md-5">
-                                <label class="form-label" for="expenses">Monthly Expenses</label>
-                                <input class="form-control"
-                                       type="number"
-                                       id="expenses"
-                                       name="expenses"
-                                       placeholder="Total Expenses"
-                                       min="0"
-                                       step="0.01">
+                            <div class="tab-pane fade"
+                                 id="expensesPane"
+                                 role="tabpanel"
+                                 aria-labelledby="tabPane">
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <label class="form-label" for="expenses">Monthly
+                                                                                 Expenses</label>
+                                        <input class="form-control"
+                                               type="number"
+                                               id="expenses"
+                                               name="expenses"
+                                               placeholder="Total Expenses"
+                                               min="0"
+                                               step="0.01">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center m-3">
-                            <div class="col-md col-md-5">
-                                <label class="form-label" for="debt">Total Debt</label>
-                                <input class="form-control"
-                                       type="number"
-                                       id="debt"
-                                       name="debt"
-                                       placeholder="Total Debt"
-                                       min="0"
-                                       step="0.01">
+                            <div class="tab-pane fade"
+                                 id="deptPane"
+                                 role="tabpanel"
+                                 aria-labelledby="tabPane">
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <label class="form-label" for="debt">Total Debt</label>
+                                        <input class="form-control"
+                                               type="number"
+                                               id="debt"
+                                               name="debt"
+                                               placeholder="Total Debt"
+                                               min="0"
+                                               step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="percentPane"
+                                 role="tabpanel"
+                                 aria-labelledby="tabPane">
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <div class="card">
+                                            <div class="card-header text-center">Leftover Cash</div>
+                                            <div class="card-body text-center">
+                                                <p class="highlight m-0">
+                                                    $<span id="cashLeft">999</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <label class="form-label"
+                                               for="savingsPercent">Monthly Savings</label>
+                                        <input class="form-control"
+                                               type="number"
+                                               id="savingsPercent"
+                                               name="savings"
+                                               placeholder="Savings Percentage"
+                                               min="0"
+                                               step="0.01">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-md col-md-5">
+                                        <label class="form-label" for="debtPercent">Debt
+                                                                                       Repayment</label>
+                                        <input class="form-control"
+                                               type="number"
+                                               id="debtPercent"
+                                               name="savings"
+                                               placeholder="Debt Percentage"
+                                               min="0"
+                                               step="0.01">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
