@@ -19,14 +19,54 @@ function addButtonEventListeners() {
     const budgetTab = document.getElementById("budgetTab");
 
     const tabs = [incomeTab, expenseTab, debtTab, percentTab, budgetTab];
-    const nextButtons = document.querySelectorAll("[data-btn]");
-
-    console.log(tabs);
+    const nextButtons = document.querySelectorAll("[data-btn='next']");
 
     nextButtons.forEach(button => {
         button.addEventListener("click", () => nextTab(tabs));
     });
 
+    updateExpenseButtons();
+}
+
+function createExpenseInput(lastExpenseRow, idNumber) {
+    const expenseRow = document.createElement("div");
+    const expenseCol = document.createElement("div");
+    const expenseLabel = document.createElement("label");
+    const expenseInput = document.createElement("input");
+    const buttonCol = document.createElement("div");
+    const button = document.createElement("button");
+
+    expenseRow.classList.add("row", "justify-content-center", "m-3");
+    expenseRow.appendChild(expenseCol);
+    expenseCol.classList.add("col-sm-9", "col-12");
+    expenseCol.appendChild(expenseLabel);
+    expenseLabel.classList.add("form-label");
+    expenseLabel.setAttribute("for", "expenseItem" + idNumber);
+    expenseLabel.innerText = "Expense";
+    expenseCol.appendChild(expenseInput);
+    expenseInput.classList.add("form-control");
+    expenseInput.id = "expenseItem" + idNumber;
+    expenseInput.type = "number";
+    expenseInput.placeholder = "Expense" + idNumber;
+    expenseInput.step = "0.01";
+    expenseInput.min = "0";
+    expenseRow.appendChild(buttonCol);
+    buttonCol.classList.add("col-sm-3", "col-12", "justify-content-center", "mt-3", "add-button-container");
+    buttonCol.appendChild(button);
+    button.classList.add("btn", "btn-highlight");
+    button.type = "button";
+    button.setAttribute("data-btn", "add");
+    button.innerText = "Add Expense";
+    
+    lastExpenseRow.insertAdjacentElement("afterend", expenseRow);
+    updateExpenseButtons();
+}
+
+function updateExpenseButtons(){
+    const addButtons = document.querySelectorAll("[data-btn='add']");
+    addButtons.forEach(button => {
+        button.addEventListener("click", () => createExpenseInput(button.parentElement.parentElement, addButtons.length + 1));
+    });
 }
 
 function nextTab(tabs) {
@@ -93,6 +133,7 @@ function calculateCashLeftSpan() {
     const cashLeftSpan = document.getElementById("cashLeft");
     cashLeftSpan.innerText = String(calculateCashLeft());
 }
+
 function calculateCashLeft() {
     const incomeInput = document.getElementById("income");
     const expenseInput = document.getElementById("expenses");
