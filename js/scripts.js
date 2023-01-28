@@ -143,7 +143,7 @@ function addFormEventListeners() {
     const incomePeriodSelect = document.getElementById("incomePeriod");
     const incomeInput = document.getElementById("income");
     const expenseInput = document.getElementById("totalExpenses");
-    const debtMonthsInput = document.getElementById("debt");
+    const debtMonthsInput = document.getElementById("debtMonths");
     const debtInput = document.getElementById("debt");
     const savingsPercentInput = document.getElementById("savingsPercent");
     const debtPercentInput = document.getElementById("debtPercent");
@@ -161,7 +161,7 @@ function addFormEventListeners() {
 
 function calculateBudget() {
     const incomeInput = document.getElementById("income");
-    const expenseInput = document.getElementById("expenses");
+    const expenseInput = document.getElementById("totalExpenses");
     const debtInput = document.getElementById("debt");
     const incomeBudgetInput = document.getElementById("incomeBudget");
     const expenseBudgetInput = document.getElementById("expensesBudget");
@@ -194,7 +194,7 @@ function calculateCashLeftSpan() {
 
 function calculateCashLeft() {
     const incomeInput = document.getElementById("income");
-    const expenseInput = document.getElementById("expenses");
+    const expenseInput = document.getElementById("totalExpenses");
 
     const income = incomeInput.value;
     const expenses = expenseInput.value;
