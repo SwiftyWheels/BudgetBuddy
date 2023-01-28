@@ -12,6 +12,8 @@
     --color-black: #000000;
     /* Background, Text */
     --color-white: #FFFFFF;
+    /* Primary Button Color */
+    --color-primary-button: #0d6efd;
 }
 
 html, body {
@@ -59,6 +61,23 @@ main{
     background-color: var(--color-highlight);
     color: var(--color-white);
     border: 1px solid var(--color-highlight);
+}
+
+.btn-highlight{
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+    border: 1px solid var(--color-highlight);
+}
+
+.btn-highlight:hover{
+    background-color: var(--color-primary-button);
+    color: var(--color-white);
+    border: 1px solid var(--color-primary-button);
+}
+
+.add-button-container{
+    display: flex;
+    align-items: flex-end;
 }
 
 .highlight{

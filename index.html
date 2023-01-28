@@ -30,7 +30,8 @@
                     <div class="card text-center align-items-center">
                         <div class="col col-8 card-body">
                             <h2>What is <span class="highlight">Budget Buddy?</span></h2>
-                            <p>Budget Buddy is a budgeting app that allows you to analyze your income, and
+                            <p>Budget Buddy is a budgeting app that allows you to analyze your
+                               income, and
                                give
                                you a general budget that you can follow.</p>
                         </div>
@@ -117,13 +118,15 @@
                                                     <option value="biweekly">Bi-Weekly</option>
                                                     <option value="monthly">Monthly</option>
                                                 </select>
-                                                <p class="form-text">This period will be used for expenses
+                                                <p class="form-text">This period will be used for
+                                                                     expenses
                                                                      as well.</p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
-                                                <label class="form-label" for="income">Income</label>
+                                                <label class="form-label"
+                                                       for="income">Income</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="income"
@@ -147,15 +150,35 @@
                                          role="tabpanel"
                                          aria-labelledby="tabPane">
                                         <div class="row justify-content-center m-3">
-                                            <div class="col-md col-md-5">
-                                                <label class="form-label" for="expenses">Expenses</label>
+                                            <div class="col-sm-9 col-12">
+                                                <label class="form-label"
+                                                       for="expenseItem1">Expense</label>
                                                 <input class="form-control"
                                                        type="number"
-                                                       id="expenses"
+                                                       id="expenseItem1"
+                                                       placeholder="Expense"
+                                                       min="0"
+                                                       value="0"
+                                                       step="0.01">
+                                            </div>
+                                            <div class="col-sm-3 col-12 justify-content-center mt-3 add-button-container">
+                                                <button type="button" class="btn btn-highlight" data-btn="add">
+                                                    Add Expense
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center m-3">
+                                            <div class="col-md col-md-5">
+                                                <label class="form-label"
+                                                       for="totalExpenses">Total Expenses</label>
+                                                <input class="form-control"
+                                                       type="number"
+                                                       id="totalExpenses"
                                                        name="expenses"
                                                        placeholder="Total Expenses"
                                                        min="0"
-                                                       step="0.01">
+                                                       step="0.01"
+                                                       readonly>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
@@ -173,7 +196,8 @@
                                          aria-labelledby="tabPane">
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
-                                                <label class="form-label" for="debtMonths">Months to Pay</label>
+                                                <label class="form-label" for="debtMonths">Months to
+                                                                                           Pay</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="debtMonths"
@@ -181,11 +205,14 @@
                                                        placeholder="Months to Pay"
                                                        min="1"
                                                        step="12">
+                                                <p class="form-text">Amount of months you want to
+                                                                     pay this debt off.</p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
-                                                <label class="form-label" for="debt">Total Debt</label>
+                                                <label class="form-label" for="debt">Total
+                                                                                     Debt</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="debt"
@@ -193,6 +220,8 @@
                                                        placeholder="Total Debt"
                                                        min="0"
                                                        step="0.01">
+                                                <p class="form-text">The total debt that you
+                                                                     owe.</p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
@@ -211,10 +240,15 @@
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
                                                 <div class="card">
-                                                    <div class="card-header text-center">Leftover Cash</div>
+                                                    <div class="card-header text-center">Leftover
+                                                                                         Cash
+                                                    </div>
                                                     <div class="card-body text-center">
                                                         <p class="highlight m-0">
                                                             $<span id="cashLeft">999</span></p>
+                                                        <p class="form-text">Amount of leftover cash
+                                                                             after savings and debt
+                                                                             allocations.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -230,6 +264,8 @@
                                                        placeholder="Savings Percentage"
                                                        min="0"
                                                        step="0.01">
+                                                <p class="form-text">The percentage of income you
+                                                                     want to save.</p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
@@ -243,13 +279,16 @@
                                                        placeholder="Debt Percentage"
                                                        min="0"
                                                        step="0.01">
+                                                <p class="form-text">The percentage of income you
+                                                                     want to spend on debt
+                                                                     repayment.</p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5 text-center">
                                                 <button type="button"
                                                         class="btn btn-primary"
-                                                        data-btn="calculate">Calculate
+                                                        data-btn="next">Calculate
                                                 </button>
                                             </div>
                                         </div>
@@ -261,7 +300,8 @@
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
                                                 <p>
-                                                    Based on the information you provided, here is your
+                                                    Based on the information you provided, here is
+                                                    your
                                                     budget:
                                                 </p>
                                             </div>
@@ -311,7 +351,8 @@
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
                                                 <label class="form-label"
-                                                       for="savingsBudget">Savings based on Percentage</label>
+                                                       for="savingsBudget">Savings based on
+                                                                           Percentage</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="savingsBudget"
@@ -325,7 +366,8 @@
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
                                                 <label class="form-label"
-                                                       for="debtBudgetPercent">Debt Repayment based on Percentage</label>
+                                                       for="debtBudgetPercent">Debt Repayment based
+                                                                               on Percentage</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="debtBudgetPercent"
@@ -334,13 +376,15 @@
                                                        min="0"
                                                        step="0.01"
                                                        readonly>
-                                                <p class="form-text m-0">Months to pay: <span id="monthsToPayPercent">0</span></p>
+                                                <p class="form-text m-0">Months to pay:
+                                                    <span id="monthsToPayPercent">0</span></p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
                                             <div class="col-md col-md-5">
                                                 <label class="form-label"
-                                                       for="debtBudgetMonths">Debt Repayment based on Months</label>
+                                                       for="debtBudgetMonths">Debt Repayment based
+                                                                              on Months</label>
                                                 <input class="form-control"
                                                        type="number"
                                                        id="debtBudgetMonths"
@@ -349,7 +393,8 @@
                                                        min="0"
                                                        step="0.01"
                                                        readonly>
-                                                <p class="form-text m-0">Months to pay: <span id="monthsToPay">0</span></p>
+                                                <p class="form-text m-0">Months to pay:
+                                                    <span id="monthsToPay">0</span></p>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center m-3">
