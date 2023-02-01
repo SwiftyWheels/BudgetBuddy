@@ -4,6 +4,9 @@ Buddy Budget generates a simple budget for you based on your income and expenses
 app that runs in your browser. It is not a replacement for a full-featured budgeting app, but it can
 be a good starting point for someone who wants to get a handle on their finances.
 
+## Link
+https://budgetbuddy.patrickhogg.ca/
+
 ## How to use
 
 1. Enter your income and expenses in the form.
